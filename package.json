@@ -1,0 +1,39 @@
+{
+  "name": "red-components",
+  "version": "1.0.0",
+  "description": "Collection of React-components used by my applications",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -o src/library.css && rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedstonePfalz/red-components.git"
+  },
+  "keywords": [
+    "react",
+    "next.js",
+    "typography",
+    "design"
+  ],
+  "author": "RedstonePfalz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RedstonePfalz/red-components/issues"
+  },
+  "homepage": "https://github.com/RedstonePfalz/red-components#readme",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "rollup": "^4.26.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.6.3"
+  }
+}
