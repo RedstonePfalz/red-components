@@ -98,3 +98,7 @@ return (
 ## Building
 
 You can build this small library using `npm run build`. The output files will be placed in the `dist`-Folder.
+
+## Credits
+
+This library is built using [TailwindCSS](https://tailwindcss.com/), TypeScript, React and [Rollup](https://rollupjs.org/).
