@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Collection of React-components used by my applications",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tailwindcss -c tailwind.config.js -o src/library.css && rollup -c"
+    "build": "rollup -c && tsc"
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,12 @@
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "rollup": "^4.26.0",
-    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup": "^4.27.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.8.1",
     "typescript": "^5.6.3"
   }
 }
