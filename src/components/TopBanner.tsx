@@ -11,7 +11,7 @@ interface TopBanner {
 }
 
 /**
- * Creates a modern banner for the top a website
+ * Creates a modern banner for the top of a website
  * @param title The title of the banner. It will be bold
  * @param description The description of the banner. It will be normal
  * @param buttonText The text for the action button
