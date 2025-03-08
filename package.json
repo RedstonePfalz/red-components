@@ -1,6 +1,6 @@
 {
   "name": "red-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collection of React-components used by my applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
