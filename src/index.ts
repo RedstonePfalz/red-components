@@ -1,4 +1,3 @@
-import "./index.css";
 import "./index";
 
 export * from "./components";
