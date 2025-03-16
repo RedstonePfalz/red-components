@@ -11,16 +11,11 @@ Collection of React components used by my applications.
 
 ## Tailwind config
 
-You have to add the following lines to `safelist` in `tailwind.config.ts`:
-```typescript
-safelist: [
-    { pattern: /^blur-(sm|md|lg|xl|2xl|3xl)$/ },
-    { pattern: /^brightness-(0|50|75|90|95|100|105|110|125|150|200)$/ },
-    { pattern: /^select-(auto|all|text|none)$/ },
-    { pattern: /^contrast-(0|50|75|100|125|150|200)$/ },
-    { pattern: /^hue-rotate-(0|15|30|60|90|180)$/ },
-    { pattern: /^saturate-(0|50|100|150|200)$/ },
-]
+You have to add the following lines in your main css:
+```css
+@import "tailwindcss";
+@plugin "tailwindcss-react-aria-components";
+@source "[npm root folder]/node_modules/red-components"
 ```
 
 ## Components
@@ -30,6 +25,49 @@ safelist: [
 Usage: `<Badge type="">Example</Badge>`
 
 type can be the following values: `"success" | "error" | "warning" | "info" | "neutral" | "indigo" | "purple" | "pink"`
+
+### Bottom Navigation
+
+Usage:
+```tsx
+return(
+    <BottomNavigation>
+        <BottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </BottomNavigationItem>
+        <BottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </BottomNavigationItem>
+        <BottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </BottomNavigationItem>
+        <BottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </BottomNavigationItem>
+    </BottomNavigation>
+);
+```
+
+or
+
+```tsx
+return(
+    <RoundedBottomNavigation>
+        <RoundedBottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </RoundedBottomNavigationItem>
+        <RoundedBottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </RoundedBottomNavigationItem>
+        <RoundedBottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </RoundedBottomNavigationItem>
+        <RoundedBottomNavigationItem item_text="test" onClick={click}>
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+        </RoundedBottomNavigationItem>
+    </RoundedBottomNavigation>
+);
+```
 
 ### Select control
 
