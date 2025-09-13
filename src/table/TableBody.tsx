@@ -1,15 +1,15 @@
 import React from "react";
 
-interface TableBody {
+type TableBody = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 }
 
 /**
  * table body
  */
-const TableBody: React.FC<TableBody> = ({ children }) => {
+const TableBody: React.FC<TableBody> = ({ children, ...props }) => {
     return (
-        <tbody>
+        <tbody {...props}>
             {children}
         </tbody>
     );

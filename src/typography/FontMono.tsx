@@ -1,15 +1,15 @@
 import React from "react";
 
-interface FontMono {
+type FontMono = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 }
 
 /**
  * mono font
  */
-const FontMono: React.FC<FontMono> = ({ children }) => {
+const FontMono: React.FC<FontMono> = ({ children, ...props }) => {
     return (
-        <div className="font-mono">
+        <div className="font-mono" {...props}>
             {children}
         </div>
     );

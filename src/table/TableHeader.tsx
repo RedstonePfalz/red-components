@@ -1,15 +1,15 @@
 import React from "react";
 
-interface TableHeader {
+type TableHeader = React.HTMLAttributes<HTMLTableCellElement> & {
     children: React.ReactNode;
 }
 
 /**
  * table header
  */
-const TableHeader: React.FC<TableHeader> = ({ children }) => {
+const TableHeader: React.FC<TableHeader> = ({ children, ...props }) => {
     return (
-        <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+        <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right" {...props}>
             {children}
         </th>
     );

@@ -1,15 +1,15 @@
 import React from "react";
 
-interface TypoSmall {
+type TypoSmall = React.HTMLAttributes<HTMLDetailsElement> & {
     children: React.ReactNode;
 }
 
 /**
  * small text
  */
-const TypoSmall: React.FC<TypoSmall> = ({ children }) => {
+const TypoSmall: React.FC<TypoSmall> = ({ children, ...props }) => {
     return (
-        <small className="text-sm font-medium leading-none">
+        <small className="text-sm font-medium leading-none" {...props}>
             {children}
         </small>
     );

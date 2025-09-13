@@ -1,15 +1,15 @@
 import React from "react";
 
-interface FontSerif {
+type FontSerif = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 }
 
 /**
  * serif font
  */
-const FontSerif: React.FC<FontSerif> = ({ children }) => {
+const FontSerif: React.FC<FontSerif> = ({ children, ...props }) => {
     return (
-        <div className="font-serif">
+        <div className="font-serif" {...props}>
             {children}
         </div>
     );

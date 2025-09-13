@@ -1,15 +1,15 @@
 import React from "react";
 
-interface TableHead {
+type TableHead = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 }
 
 /**
  * table head
  */
-const TableHead: React.FC<TableHead> = ({ children }) => {
+const TableHead: React.FC<TableHead> = ({ children, ...props }) => {
     return (
-        <thead>
+        <thead {...props}>
             {children}
         </thead>
     );

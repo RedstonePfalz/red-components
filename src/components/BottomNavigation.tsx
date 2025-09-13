@@ -6,30 +6,30 @@
 
 import React from "react";
 
-interface RoundedBottomNavigation {
+type RoundedBottomNavigation = React.HTMLAttributes<HTMLDivElement> & {
     itemCount: number;
     children: React.ReactNode;
 }
 
-interface RoundedBottomNavigationItem {
+type RoundedBottomNavigationItem = React.HTMLAttributes<HTMLButtonElement> & {
     item_text: string;
     onClick: () => void;
     viewBox: string;
     children: React.ReactNode;
 }
 
-interface HighlightedBottomNavigationItem {
+type HighlightedBottomNavigationItem = React.HTMLAttributes<HTMLButtonElement> & {
     item_text: string;
     onClick: () => void;
     viewBox: string;
     children: React.ReactNode;
 }
 
-interface BottomNavigation {
+type BottomNavigation = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 }
 
-interface BottomNavigationItem {
+type BottomNavigationItem = React.HTMLAttributes<HTMLButtonElement> & {
     item_text: string;
     onClick: () => void;
     children: React.ReactNode;
@@ -40,9 +40,9 @@ interface BottomNavigationItem {
  * @param children must be one of RoundedBottomNavigationItem or HighlightedBottomNavigationItem
  * @constructor
  */
-const RoundedBottomNavigation: React.FC<RoundedBottomNavigation> = ({ children }) => {
+const RoundedBottomNavigation: React.FC<RoundedBottomNavigation> = ({ children, ...props }) => {
     return (
-        <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+        <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600" {...props}>
             <div className={`grid h-full max-w-lg grid-cols-5 mx-auto`}>
                 {children}
             </div>
@@ -57,9 +57,9 @@ const RoundedBottomNavigation: React.FC<RoundedBottomNavigation> = ({ children }
  * @param children SVG <path> elements
  * @constructor
  */
-const RoundedBottomNavigationItem: React.FC<RoundedBottomNavigationItem> = ({ item_text, onClick, viewBox, children }) => {
+const RoundedBottomNavigationItem: React.FC<RoundedBottomNavigationItem> = ({ item_text, onClick, viewBox, children, ...props }) => {
     return (
-        <button onClick={onClick} type="button" className="inline-flex overflow-hidden flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
+        <button onClick={onClick} type="button" className="inline-flex overflow-hidden flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group" {...props}>
             <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox={viewBox}>
                 {children}
             </svg>
@@ -75,10 +75,10 @@ const RoundedBottomNavigationItem: React.FC<RoundedBottomNavigationItem> = ({ it
  * @param children SVG <path> elements
  * @constructor
  */
-const HighlightedBottomNavigationItem: React.FC<HighlightedBottomNavigationItem> = ({ item_text, onClick, viewBox, children }) => {
+const HighlightedBottomNavigationItem: React.FC<HighlightedBottomNavigationItem> = ({ item_text, onClick, viewBox, children, ...props }) => {
     return (
         <div className="flex items-center justify-center">
-            <button onClick={onClick} type="button" className="inline-flex overflow-hidden items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+            <button onClick={onClick} type="button" className="inline-flex overflow-hidden items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800" {...props}>
                 <svg className="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox={viewBox}>
                     {children}
                 </svg>
@@ -111,9 +111,9 @@ const BottomNavigation: React.FC<BottomNavigation> = ({ children }) => {
  * @param children SVG <path> elements
  * @constructor
  */
-const BottomNavigationItem: React.FC<BottomNavigationItem> = ({ item_text, onClick, children }) => {
+const BottomNavigationItem: React.FC<BottomNavigationItem> = ({ item_text, onClick, children, ...props }) => {
     return (
-        <button onClick={onClick} type="button" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+        <button onClick={onClick} type="button" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" {...props}>
             <svg className="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 {children}
             </svg>

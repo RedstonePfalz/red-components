@@ -2,7 +2,7 @@
 
 import React from "react";
 
-interface SelectControl {
+type SelectControl = React.HTMLAttributes<HTMLDivElement> & {
     type: "auto" | "all" | "text" | "none";
     children: React.ReactNode;
 }
@@ -12,9 +12,9 @@ interface SelectControl {
  * @param type "auto" | "all" | "text" | "none"
  * @constructor
  */
-const SelectControl: React.FC<SelectControl> = ({ type, children }) => {
+const SelectControl: React.FC<SelectControl> = ({ type, children, ...props }) => {
     return (
-        <div className={`select-${type}`}>
+        <div className={`select-${type}`} {...props}>
             {children}
         </div>
     )

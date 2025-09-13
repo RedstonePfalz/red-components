@@ -2,7 +2,7 @@
 
 import React from "react";
 
-interface Badge {
+type Badge = React.HTMLAttributes<HTMLDivElement> & {
     type: "success" | "error" | "warning" | "info" | "neutral" | "indigo" | "purple" | "pink";
     children: React.ReactNode;
 }
@@ -24,12 +24,12 @@ const typeStyles = {
  * @param children The text of the badge
  * @constructor
  */
-const Badge: React.FC<Badge> = ({ type, children }) => {
+const Badge: React.FC<Badge> = ({ type, children, ...props }) => {
 
     const badgeClasses: string = "inline-flex select-none items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset" + typeStyles[type] || "";
 
     return (
-        <span className={badgeClasses}>
+        <span className={badgeClasses} {...props}>
             {children}
         </span>
     );

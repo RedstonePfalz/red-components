@@ -3,7 +3,7 @@
 import React from "react";
 
 
-interface TopBanner {
+type TopBanner = React.HTMLAttributes<HTMLDivElement> & {
     title: string;
     description: string;
     buttonText: string;
@@ -18,14 +18,14 @@ interface TopBanner {
  * @param buttonLink The link for the action button
  * @constructor
  */
-const TopBanner: React.FC<TopBanner> = ({ title, description, buttonText, buttonLink }) => {
+const TopBanner: React.FC<TopBanner> = ({ title, description, buttonText, buttonLink, ...props }) => {
     const [isVisible, setIsVisible] = React.useState(true);
 
     if (!isVisible) return null;
 
     return (
         <div
-            className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+            className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1" {...props}>
             <div
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
                 aria-hidden="true">
