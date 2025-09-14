@@ -7,7 +7,6 @@
 import React from "react";
 
 type RoundedBottomNavigation = React.HTMLAttributes<HTMLDivElement> & {
-    itemCount: number;
     children: React.ReactNode;
 }
 
